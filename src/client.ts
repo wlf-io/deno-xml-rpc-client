@@ -15,8 +15,7 @@ export class Client {
     }
 
     public async methodCall(method:string, params:BasicArray) :Promise<BasicType> {
-
-        console.log(Serializer.serializeMethodCall(method,params));
+        
         const content = Serializer.serializeMethodCall(method,params);
         
         const buf = new Buffer(new TextEncoder().encode(content));
